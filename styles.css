@@ -7,12 +7,11 @@
    CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ===================================================== */
 :root {
-    /* Primary Colors - Yellow/Orange Theme */
-    --primary-hue: 42;
-    --primary: hsl(var(--primary-hue), 100%, 50%);
-    --primary-light: hsl(var(--primary-hue), 100%, 60%);
-    --primary-dark: hsl(var(--primary-hue), 100%, 40%);
-    --primary-gradient: linear-gradient(135deg, hsl(var(--primary-hue), 100%, 55%) 0%, hsl(calc(var(--primary-hue) - 10), 100%, 50%) 100%);
+    /* Primary Colors - Black & White Theme */
+    --primary: #111111;
+    --primary-light: #333333;
+    --primary-dark: #000000;
+    --primary-gradient: linear-gradient(135deg, #222222 0%, #000000 100%);
 
     /* Neutral Colors */
     --white: #ffffff;
@@ -32,19 +31,19 @@
     --bg-primary: #ffffff;
     --bg-secondary: #f8f9fa;
     --bg-tertiary: #f0f2f5;
-    --bg-dark: #1a1a2e;
-    --bg-darker: #16213e;
+    --bg-dark: #111111;
+    --bg-darker: #0a0a0a;
 
     /* Text Colors */
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a4a5a;
-    --text-muted: #6c757d;
+    --text-primary: #111111;
+    --text-secondary: #444444;
+    --text-muted: #777777;
     --text-light: #ffffff;
 
     /* Glassmorphism */
     --glass-bg: rgba(255, 255, 255, 0.25);
     --glass-border: rgba(255, 255, 255, 0.18);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -52,7 +51,7 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --shadow-primary: 0 10px 40px rgba(255, 193, 7, 0.3);
+    --shadow-primary: 0 10px 40px rgba(0, 0, 0, 0.2);
 
     /* Typography */
     --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -106,68 +105,7 @@
     --container-padding: 1.5rem;
 }
 
-/* Dark Mode Variables */
-[data-theme="dark"] {
-    --bg-primary: #0f0f1a;
-    --bg-secondary: #1a1a2e;
-    --bg-tertiary: #16213e;
-    --text-primary: #ffffff;
-    --text-secondary: #b8b8c8;
-    --text-muted: #8888a0;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --gray-50: #2a2a3e;
-    --gray-100: #1f1f30;
-    --gray-200: #3a3a50;
-}
 
-/* Dark Mode Specific Overrides */
-[data-theme="dark"] .professional-card {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-}
-
-[data-theme="dark"] .professional-card p {
-    color: #d0d0e0;
-}
-
-[data-theme="dark"] .competency-item {
-    background: #2a2a3e;
-}
-
-[data-theme="dark"] .competency-item span {
-    color: #ffffff;
-}
-
-[data-theme="dark"] .competency-item i {
-    color: var(--primary);
-}
-
-[data-theme="dark"] .competency-item:hover {
-    background: var(--primary);
-}
-
-[data-theme="dark"] .competency-item:hover span,
-[data-theme="dark"] .competency-item:hover i {
-    color: #1a1a2e;
-}
-
-/* CTA Section Dark Mode */
-[data-theme="dark"] .cta-content {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-}
-
-[data-theme="dark"] .cta-content h3 {
-    color: #ffffff;
-}
-
-[data-theme="dark"] .cta-content p {
-    color: #b8b8c8;
-}
-
-/* Skills section dark mode */
-[data-theme="dark"] .skill-bar {
-    background: #2a2a3e;
-}
 
 /* =====================================================
    CSS RESET & BASE STYLES
@@ -266,7 +204,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 12px;
-    background: linear-gradient(90deg, rgba(255, 100, 0, 0.5), rgba(255, 165, 0, 0.3));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08));
     z-index: -1;
     transform: skewX(-5deg);
 }
@@ -301,7 +239,7 @@ textarea {
     width: 60px;
     height: 60px;
     border: 3px solid rgba(255, 255, 255, 0.1);
-    border-top-color: var(--primary);
+    border-top-color: #ffffff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -366,7 +304,7 @@ textarea {
 .cursor-follower.hover {
     width: 60px;
     height: 60px;
-    background: rgba(255, 193, 7, 0.1);
+    background: rgba(0, 0, 0, 0.08);
 }
 
 /* =====================================================
@@ -462,25 +400,7 @@ textarea {
     gap: var(--space-md);
 }
 
-.theme-toggle {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-full);
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    color: var(--text-primary);
-    font-size: var(--fs-lg);
-    transition: var(--transition-base);
-}
 
-.theme-toggle:hover {
-    background: var(--primary);
-    color: var(--white);
-    transform: rotate(360deg);
-}
 
 .nav__toggle,
 .nav__close {
@@ -556,11 +476,21 @@ textarea {
     left: 0;
     right: 0;
     height: 70%;
-    background: linear-gradient(135deg,
-            hsl(var(--primary-hue), 100%, 55%) 0%,
-            hsl(var(--primary-hue), 90%, 50%) 50%,
-            hsl(calc(var(--primary-hue) - 5), 85%, 45%) 100%);
+    background: #f5f5f5;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero__bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background-image: radial-gradient(circle, #d0d0d0 1px, transparent 1px);
+    background-size: 30px 30px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    opacity: 0.6;
 }
 
 .hero__shapes {
@@ -571,7 +501,7 @@ textarea {
 
 .shape {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.04);
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
 }
@@ -624,10 +554,10 @@ textarea {
 .hero__greeting {
     display: inline-block;
     font-size: var(--fs-lg);
-    color: #ffffff;
+    color: var(--text-muted);
     margin-bottom: var(--space-sm);
     opacity: 0.95;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
 }
 
 .hero__title {
@@ -635,26 +565,30 @@ textarea {
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: var(--space-sm);
-    color: #1a1a2e;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+    text-shadow: none;
+}
+
+.hero__title .text-highlight {
+    color: var(--text-primary);
 }
 
 .hero__subtitle {
     font-size: var(--fs-2xl);
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text-secondary);
     margin-bottom: var(--space-lg);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    text-shadow: none;
 }
 
 .hero__description {
     font-size: var(--fs-base);
-    color: #1a1a2e;
+    color: var(--text-muted);
     max-width: 500px;
     margin-bottom: var(--space-xl);
     line-height: 1.8;
-    opacity: 0.9;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    text-shadow: none;
 }
 
 .hero__buttons {
@@ -692,14 +626,15 @@ textarea {
 }
 
 .btn--primary {
-    background: var(--primary-gradient);
-    color: var(--text-primary);
-    box-shadow: var(--shadow-primary);
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: var(--shadow-lg);
 }
 
 .btn--primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 50px rgba(255, 193, 7, 0.4);
+    background: #333333;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
 }
 
 .btn--primary i {
@@ -717,7 +652,7 @@ textarea {
 
 .btn--outline:hover {
     background: var(--text-primary);
-    color: var(--white);
+    color: #ffffff;
     transform: translateY(-3px);
 }
 
@@ -739,7 +674,7 @@ textarea {
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(10px);
     color: var(--text-primary);
     font-size: var(--fs-base);
@@ -748,7 +683,7 @@ textarea {
 
 .social-link:hover {
     background: var(--primary);
-    color: var(--white);
+    color: #ffffff;
     transform: translateY(-5px);
 }
 
@@ -768,7 +703,7 @@ textarea {
 .hero__image-ring {
     position: absolute;
     inset: -20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     animation: pulse-ring 2s ease-out infinite;
 }
@@ -990,13 +925,7 @@ textarea {
     user-select: none;
 }
 
-[data-theme="dark"] .about__bg-text,
-[data-theme="dark"] .experience__bg-text,
-[data-theme="dark"] .portfolio__bg-text,
-[data-theme="dark"] .contact__bg-text {
-    color: var(--gray-800);
-    opacity: 0.3;
-}
+
 
 /* =====================================================
    ABOUT SECTION
@@ -1692,7 +1621,7 @@ textarea {
 }
 
 .resume-card {
-    background: linear-gradient(135deg, var(--primary), hsl(calc(var(--primary-hue) - 10), 100%, 45%));
+    background: linear-gradient(135deg, #1a1a1a, #000000);
     padding: var(--space-xl);
     border-radius: var(--radius-xl);
     display: flex;
@@ -1704,7 +1633,7 @@ textarea {
 
 .resume-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(255, 193, 7, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .resume-icon {
@@ -2069,7 +1998,7 @@ textarea {
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
 }
 
 .form-group textarea {
@@ -2230,7 +2159,7 @@ textarea {
 }
 
 .footer__nav a:hover {
-    color: var(--primary);
+    color: #ffffff;
 }
 
 .footer__social {
@@ -2244,7 +2173,8 @@ textarea {
 }
 
 .footer__social .social-link:hover {
-    background: var(--primary);
+    background: #ffffff;
+    color: #111111;
 }
 
 /* =====================================================

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillBars();
     initPortfolioFilter();
     initContactForm();
-    initThemeToggle();
+
     initBackToTop();
     initParallaxEffects();
     initTextAnimations();
@@ -452,36 +452,7 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-/* =====================================================
-   THEME TOGGLE
-   ===================================================== */
-function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
 
-    if (!themeToggle) return;
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
-    }
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-        const icon = themeToggle.querySelector('i');
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-}
 
 /* =====================================================
    BACK TO TOP
