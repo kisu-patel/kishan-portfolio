@@ -54,8 +54,8 @@
     --shadow-primary: 0 10px 40px rgba(0, 0, 0, 0.2);
 
     /* Typography */
-    --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-display: 'Playfair Display', Georgia, serif;
+    --font-primary: 'Inter', sans-serif;
+    --font-display: 'Antonio', sans-serif;
 
     /* Font Sizes (Fluid Typography) */
     --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -136,6 +136,10 @@ body {
 
 body.no-scroll {
     overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
 }
 
 img {
@@ -366,8 +370,11 @@ textarea {
 }
 
 .nav__link {
+    font-family: var(--font-display);
     font-size: var(--fs-sm);
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--text-secondary);
     position: relative;
     padding: var(--space-sm) 0;
@@ -552,9 +559,12 @@ textarea {
 }
 
 .hero__greeting {
+    font-family: var(--font-display);
     display: inline-block;
     font-size: var(--fs-lg);
     color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: var(--space-sm);
     opacity: 0.95;
     text-shadow: none;
@@ -600,12 +610,17 @@ textarea {
 
 /* Buttons */
 .btn {
+    font-family: var(--font-display);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-sm);
     padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-lg);
     font-size: var(--fs-sm);
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     border-radius: var(--radius-full);
     transition: var(--transition-base);
     position: relative;
@@ -882,12 +897,13 @@ textarea {
 }
 
 .section__subtitle {
+    font-family: var(--font-display);
     display: inline-block;
     font-size: var(--fs-sm);
     font-weight: 500;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: var(--space-sm);
 }
 
