@@ -471,6 +471,17 @@ textarea {
     z-index: -1;
 }
 
+#antigravity-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    pointer-events: none;
+}
+
 .hero__bg::before {
     content: '';
     position: absolute;
@@ -1340,15 +1351,18 @@ textarea {
     background: var(--primary);
 }
 
-.skill-card__icon i {
-    font-size: 28px;
-    color: var(--primary);
+.original-skill-icon {
+    width: 32px;
+    height: 32px;
+    filter: grayscale(100%);
+    opacity: 0.8;
     transition: all 0.3s ease;
 }
 
-.skill-card:hover .skill-card__icon i {
-    color: var(--white);
-    transform: scale(1.1);
+.skill-card:hover .original-skill-icon {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.15);
 }
 
 .skill-card__content h4 {
