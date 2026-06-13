@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# environment variables
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+
+# Raw design source files (not served by Next.js)
+me/designs work/
+
+# TypeScript
+tsconfig.tsbuildinfo
+next-env.d.ts

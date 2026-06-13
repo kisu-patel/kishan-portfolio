@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Kishan S. Patel - UI/UX Designer Portfolio. Creating intuitive and engaging user interfaces that balance aesthetics and functionality.">
+    <meta name="description" content="Kishan S. Patel — UI/UX Designer crafting intuitive digital experiences. Based in Ahmedabad, India.">
     <meta name="keywords" content="UI/UX Designer, Portfolio, Web Design, Mobile Apps, Branding, Kishan Patel">
     <meta name="author" content="Kishan S. Patel">
-    <title>Kishan S. Patel | UI/UX Designer Portfolio</title>
+    <title>Kishan S. Patel — UI/UX Designer</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 </head>
+<body class="no-scroll">
 
-<body>
     <!-- Preloader -->
     <div class="preloader" id="preloader">
-        <div class="loader">
-            <div class="loader-circle"></div>
-            <span class="loader-text">Kishan</span>
+        <div class="preloader__inner">
+            <span class="preloader__name">Kishan</span>
+            <div class="preloader__bar"><div class="preloader__fill"></div></div>
         </div>
     </div>
 
@@ -45,716 +32,598 @@
     <!-- Navigation -->
     <header class="header" id="header">
         <nav class="nav container">
-            <!-- Brand -->
-            <a href="#home">
-                <img src="img/kisulogo.svg" alt="Kishan" height="24" width="73">
+            <a href="#home" class="nav__logo">
+                <img src="img/kisulogo.svg" alt="Kishan" height="22" width="66">
             </a>
-
-            <!-- Navigation Menu -->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">Work</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#experience" class="nav__link">Experience</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="resume.pdf" class="nav__link nav__link--resume" target="_blank"
-                            rel="noopener">Resume</a>
-                    </li>
+                    <li><a href="#about" class="nav__link">About</a></li>
+                    <li><a href="#work" class="nav__link">Work</a></li>
+                    <li><a href="#experience" class="nav__link">Experience</a></li>
+                    <li><a href="kishan-resume.pdf" class="nav__link" target="_blank" rel="noopener">Resume</a></li>
                 </ul>
-
-                <!-- Mobile CTA -->
-                <div class="nav__mobile-cta">
-                    <a href="#contact" class="nav__cta-mobile">Contact Me</a>
-                </div>
-
-                <button class="nav__close" id="nav-close" aria-label="Close navigation">
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-
-            <!-- Header Actions -->
             <div class="nav__actions">
-                <a href="#contact" class="nav__cta">Contact Me</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open navigation">
-                    <i class="fas fa-bars"></i>
+                <a href="#contact" class="btn-pill">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
+    <main>
+        <!-- ── HERO ── -->
         <section class="hero" id="home">
-            <div class="hero__bg">
-                <canvas id="antigravity-canvas"></canvas>
-                <div class="hero__shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                </div>
-            </div>
-
-            <div class="hero__container container">
-                <div class="hero__content" data-aos="fade-right" data-aos-duration="1000">
-                    <span class="hero__greeting">Hello, I'm</span>
+            <div class="hero__noise"></div>
+            <div class="container hero__container">
+                <div class="hero__left">
                     <h1 class="hero__title">
-                        Kishan <span class="text-highlight">Patel</span>
+                        <span class="hero__title-line">Kishan</span>
+                        <span class="hero__title-line hero__title-line--accent">Patel</span>
                     </h1>
-                    <h2 class="hero__subtitle">UI/UX Designer</h2>
-                    <p class="hero__description">
-                        I specialize in creating intuitive and engaging user interfaces
-                        that balance aesthetics and functionality. Let's transform your
-                        ideas into exceptional digital experiences.
+                    <p class="hero__role"><span class="hero__role-highlight">UI / UX Designer</span></p>
+                    <p class="hero__desc">
+                        Crafting intuitive digital experiences that balance aesthetics with
+                        human-centered thinking. 4 years shaping interfaces at the
+                        intersection of design and business.
                     </p>
-
-                    <div class="hero__buttons">
-                        <a href="#portfolio" class="btn btn--primary">
-                            <span>View Portfolio</span>
+                    <div class="hero__actions">
+                        <a href="#work" class="btn btn--primary magnetic">
+                            <span>View Work</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="#contact" class="btn btn--outline">
-                            <span>Contact Me</span>
+                        <a href="#contact" class="btn btn--ghost magnetic">
+                            <span>Get in Touch</span>
                         </a>
                     </div>
-
                     <div class="hero__social">
-                        <a href="https://www.behance.net/kishanspatel" target="_blank" class="social-link"
-                            aria-label="Behance">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="https://dribbble.com/kishanspatel" target="_blank" class="social-link"
-                            aria-label="Dribbble">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a href="https://in.pinterest.com/kishanpatel1311/" target="_blank" class="social-link"
-                            aria-label="Pinterest">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/kishanspatel49/" target="_blank" class="social-link"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                        <a href="https://www.behance.net/kishanspatel" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                        <a href="https://dribbble.com/kishanspatel" target="_blank" rel="noopener" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://www.linkedin.com/in/kishanspatel49/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://in.pinterest.com/kishanpatel1311/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
 
-                <div class="hero__image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="hero__image-wrapper">
-                        <div class="hero__image-ring"></div>
-                        <div class="hero__image-ring hero__image-ring--outer"></div>
-                        <img src="img/kisu2.png" alt="Kishan S. Patel" class="hero__img">
+                <div class="hero__right">
+                    <div class="hero__image-frame">
+                        <img src="img/kisu2.png" alt="Kishan S. Patel" class="hero__photo">
+                        <div class="hero__image-badge">
+                            <span class="badge__num">4+</span>
+                            <span class="badge__label">Years<br>Experience</span>
+                        </div>
                     </div>
-                    <div class="hero__experience-badge">
-                        <span class="badge-number">4</span>
-                        <span class="badge-text">Years Experience</span>
+                    <div class="hero__marquee" aria-hidden="true">
+                        <div class="marquee__track">
+                            <span>UI/UX Design</span><span class="sep">·</span>
+                            <span>Figma</span><span class="sep">·</span>
+                            <span>Prototyping</span><span class="sep">·</span>
+                            <span>User Research</span><span class="sep">·</span>
+                            <span>Illustration</span><span class="sep">·</span>
+                            <span>Branding</span><span class="sep">·</span>
+                            <span>UI/UX Design</span><span class="sep">·</span>
+                            <span>Figma</span><span class="sep">·</span>
+                            <span>Prototyping</span><span class="sep">·</span>
+                            <span>User Research</span><span class="sep">·</span>
+                            <span>Illustration</span><span class="sep">·</span>
+                            <span>Branding</span><span class="sep">·</span>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="hero__scroll">
-                <a href="#about" class="scroll-down">
-                    <span class="scroll-text">Scroll Down</span>
-                    <div class="scroll-icon">
-                        <div class="scroll-wheel"></div>
-                    </div>
-                </a>
-            </div>
+            <a href="#about" class="hero__scroll" aria-label="Scroll down">
+                <span>Scroll</span>
+                <div class="hero__scroll-line"></div>
+            </a>
         </section>
 
-        <!-- About Section -->
-        <section class="about section" id="about">
-            <div class="about__bg-text">ABOUT ME</div>
-
+        <!-- ── ABOUT ── -->
+        <section class="section about" id="about">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__subtitle">Get To Know</span>
-                    <h2 class="section__title">About <span class="text-gradient">Me</span></h2>
-                    <p class="section__description">
-                        An experienced UI/UX Designer with a passion for creating seamless user experiences
-                        and delivering high-quality design solutions.
-                    </p>
+                <div class="section__head">
+                    <span class="section__num">01</span>
+                    <div class="section__head-right">
+                        <h2 class="section__title">About<br><em>Me</em></h2>
+                    </div>
                 </div>
 
-                <div class="about__content">
-                    <!-- Professional Summary - Full Width -->
-                    <div class="about__professional" data-aos="fade-up" data-aos-duration="800">
-                        <div class="professional-card">
-                            <h3><i class="fas fa-user-tie"></i> Professional Summary</h3>
-                            <p>
-                                An experienced UI/UX Designer with a passion for creating seamless user experiences.
-                                My expertise includes intuitive and engaging interface design, balancing aesthetics and
-                                functionality.
-                            </p>
-                            <p>
-                                My skills encompass wireframing, prototyping, usability testing, and user research.
-                                At <strong>Motadata Technologies</strong>, I collaborate closely with cross-functional
-                                teams,
-                                including product managers, developers, and stakeholders, to understand project
-                                requirements
-                                and translate them into compelling design solutions and business growth.
-                            </p>
-                            <p>
-                                My deep understanding of human-centered design principles, usability best practices, and
-                                industry trends enables me to deliver high-quality design solutions that meet the needs
-                                of
-                                users while aligning with business objectives.
-                            </p>
+                <div class="about__layout">
+                    <div class="about__quote-col">
+                        <blockquote class="about__quote">
+                            "I design for the people who will use it — not the spec sheet."
+                        </blockquote>
+                        <div class="about__image-wrap">
+                            <img src="img/kisu2.png" alt="Kishan S. Patel" class="about__photo">
                         </div>
                     </div>
 
-                    <div class="about__details">
-                        <div class="about__info" data-aos="fade-up" data-aos-delay="100">
-                            <h3>Personal Information</h3>
-                            <div class="info-dashboard">
-                                <div class="dashboard-card">
-                                    <div class="card-icon"><i class="fas fa-user-circle"></i></div>
-                                    <div class="card-body">
-                                        <span class="card-label">Name</span>
-                                        <span class="card-value">Kishan S. Patel</span>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
-                                    <div class="card-body">
-                                        <span class="card-label">Nationality</span>
-                                        <span class="card-value">Indian</span>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon"><i class="fas fa-language"></i></div>
-                                    <div class="card-body">
-                                        <span class="card-label">Languages</span>
-                                        <span class="card-value">Gujarati, Hindi, English</span>
-                                    </div>
-                                </div>
-                                <div class="dashboard-card">
-                                    <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
-                                    <div class="card-body">
-                                        <span class="card-label">Location</span>
-                                        <span class="card-value">Ahmedabad, Gujarat</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="about__detail-col">
+                        <p class="about__bio">
+                            I'm a UI/UX Designer based in <strong>Ahmedabad, India</strong>, with an MBA background and a deep love for human-centered design. I sit at the intersection of business thinking and visual craft — covering the full spectrum from research and strategy to high-fidelity UI, branding, and motion.
+                        </p>
+                        <p class="about__bio">
+                            Right now I'm at <strong>IT Starter</strong>, shaping digital products end-to-end. I collaborate closely with product managers, developers, and stakeholders to translate complexity into clarity — and ideas into interfaces that actually work for real people.
+                        </p>
 
-                            <div class="about__hobbies">
-                                <h4><i class="fas fa-fingerprint"></i> Interests & Passion</h4>
-                                <div class="hobby-pills">
-                                    <span class="hobby-pill"><i class="fas fa-gamepad"></i> Gaming</span>
-                                    <span class="hobby-pill"><i class="fas fa-camera"></i> Photography</span>
-                                    <span class="hobby-pill"><i class="fas fa-plane"></i> Travel</span>
-                                    <span class="hobby-pill"><i class="fas fa-palette"></i> Digital Art</span>
-                                </div>
+                        <div class="about__grid">
+                            <div class="about__info-item">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Ahmedabad, Gujarat</span>
+                            </div>
+                            <div class="about__info-item">
+                                <span class="info-label">Languages</span>
+                                <span class="info-value">Gujarati, Hindi, English</span>
+                            </div>
+                            <div class="about__info-item">
+                                <span class="info-label">Interests</span>
+                                <span class="info-value">Gaming · Photography · Travel · Digital Art</span>
+                            </div>
+                            <div class="about__info-item">
+                                <span class="info-label">Education</span>
+                                <span class="info-value">MBA — K.S. School of Business Mgmt.</span>
                             </div>
                         </div>
 
-                        <div class="about__summary" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Core Competencies</h3>
-                            <div class="competencies-grid">
-                                <div class="competency-item">
-                                    <i class="fas fa-pencil-ruler"></i>
-                                    <span>Wireframing</span>
+                        <div class="about__tools">
+                            <p class="tools__label">Tools</p>
+                            <div class="tools__grid">
+                                <div class="tool-badge">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="32" height="32">
+                                    <span>Figma</span>
                                 </div>
-                                <div class="competency-item">
-                                    <i class="fas fa-layer-group"></i>
-                                    <span>Prototyping</span>
+                                <div class="tool-badge">
+                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                                        <rect width="512" height="512" rx="100" fill="#1A0D00"/>
+                                        <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#FF9A00" stroke-width="32"/>
+                                        <text x="50%" y="67%" font-family="system-ui" font-weight="800" font-size="220" text-anchor="middle" fill="#FF9A00">Ai</text>
+                                    </svg>
+                                    <span>Illustrator</span>
                                 </div>
-                                <div class="competency-item">
-                                    <i class="fas fa-users"></i>
-                                    <span>User Research</span>
+                                <div class="tool-badge">
+                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                                        <rect width="512" height="512" rx="100" fill="#001829"/>
+                                        <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#31A8FF" stroke-width="32"/>
+                                        <text x="50%" y="67%" font-family="system-ui" font-weight="800" font-size="220" text-anchor="middle" fill="#31A8FF">Ps</text>
+                                    </svg>
+                                    <span>Photoshop</span>
                                 </div>
-                                <div class="competency-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Usability Testing</span>
-                                </div>
-                                <div class="competency-item">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <span>Human-Centered Design</span>
-                                </div>
-                                <div class="competency-item">
-                                    <i class="fas fa-handshake"></i>
-                                    <span>Cross-Team Collaboration</span>
-                                </div>
-                            </div>
-
-                            <div class="education">
-                                <h4><i class="fas fa-graduation-cap"></i> Education</h4>
-                                <div class="education-item">
-                                    <div class="edu-icon"><i class="fas fa-university"></i></div>
-                                    <div class="edu-content">
-                                        <h5>K.S. School of Business Management</h5>
-                                        <span>MBA, B.B.A | 2017 - 2019</span>
-                                    </div>
-                                </div>
-                                <div class="education-item">
-                                    <div class="edu-icon"><i class="fas fa-school"></i></div>
-                                    <div class="edu-content">
-                                        <h5>Gujarat Higher Secondary School</h5>
-                                        <span>Gujarat Higher Secondary Education Board-2027</span>
-                                    </div>
+                                <div class="tool-badge">
+                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+                                        <rect width="512" height="512" rx="100" fill="#170024"/>
+                                        <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#D199FF" stroke-width="32"/>
+                                        <text x="50%" y="67%" font-family="system-ui" font-weight="800" font-size="220" text-anchor="middle" fill="#D199FF">Ae</text>
+                                    </svg>
+                                    <span>After Effects</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="about__skills" data-aos="fade-up" data-aos-delay="300">
-                        <h3>My Technical Arsenal</h3>
-                        <div class="skills-creative-grid">
-                            <div class="skill-card skill-card--figma">
-                                <div class="skill-card__icon">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
-                                        alt="Figma" class="original-skill-icon">
-                                </div>
-                                <div class="skill-card__content">
-                                    <h4>Figma</h4>
-                                    <p>Advanced UI/UX prototyping & collaboration</p>
-                                </div>
-                            </div>
-                            <div class="skill-card skill-card--illustrator">
-                                <div class="skill-card__icon">
-                                    <svg class="original-skill-icon adobe-icon adobe-icon--ai" viewBox="0 0 512 512"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="512" height="512" rx="100" class="adobe-bg" fill="#1A0D00" />
-                                        <rect x="24" y="24" width="464" height="464" rx="76" class="adobe-border"
-                                            fill="none" stroke="#FF9A00" stroke-width="32" />
-                                        <text x="50%" y="67%"
-                                            font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                                            font-weight="800" font-size="220" text-anchor="middle" class="adobe-text"
-                                            fill="#FF9A00">Ai</text>
-                                    </svg>
-                                </div>
-                                <div class="skill-card__content">
-                                    <h4>Illustrator</h4>
-                                    <p>Vector illustrations & branding assets</p>
-                                </div>
-                            </div>
-                            <div class="skill-card skill-card--photoshop">
-                                <div class="skill-card__icon">
-                                    <svg class="original-skill-icon adobe-icon adobe-icon--ps" viewBox="0 0 512 512"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="512" height="512" rx="100" class="adobe-bg" fill="#001829" />
-                                        <rect x="24" y="24" width="464" height="464" rx="76" class="adobe-border"
-                                            fill="none" stroke="#31A8FF" stroke-width="32" />
-                                        <text x="50%" y="67%"
-                                            font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                                            font-weight="800" font-size="220" text-anchor="middle" class="adobe-text"
-                                            fill="#31A8FF">Ps</text>
-                                    </svg>
-                                </div>
-                                <div class="skill-card__content">
-                                    <h4>Photoshop</h4>
-                                    <p>High-end image manipulation & retouching</p>
-                                </div>
-                            </div>
-                            <div class="skill-card skill-card--aftereffects">
-                                <div class="skill-card__icon">
-                                    <svg class="original-skill-icon adobe-icon adobe-icon--ae" viewBox="0 0 512 512"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="512" height="512" rx="100" class="adobe-bg" fill="#170024" />
-                                        <rect x="24" y="24" width="464" height="464" rx="76" class="adobe-border"
-                                            fill="none" stroke="#D199FF" stroke-width="32" />
-                                        <text x="50%" y="67%"
-                                            font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                                            font-weight="800" font-size="220" text-anchor="middle" class="adobe-text"
-                                            fill="#D199FF">Ae</text>
-                                    </svg>
-                                </div>
-                                <div class="skill-card__content">
-                                    <h4>After Effects</h4>
-                                    <p>Dynamic motion graphics & video transitions</p>
-                                </div>
-                            </div>
+                <div class="about__stats">
+                    <div class="stat">
+                        <div class="stat__row">
+                            <span class="stat__num" data-count="4">0</span><span class="stat__plus">+</span>
                         </div>
+                        <span class="stat__label">Years Experience</span>
+                    </div>
+                    <div class="stat__divider"></div>
+                    <div class="stat">
+                        <div class="stat__row">
+                            <span class="stat__num" data-count="20">0</span><span class="stat__plus">+</span>
+                        </div>
+                        <span class="stat__label">Projects Delivered</span>
+                    </div>
+                    <div class="stat__divider"></div>
+                    <div class="stat">
+                        <div class="stat__row">
+                            <span class="stat__num" data-count="4">0</span>
+                        </div>
+                        <span class="stat__label">Certifications</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section class="experience section" id="experience">
-            <div class="experience__bg-text">EXPERIENCE</div>
-
+        <!-- ── WORK ── -->
+        <section class="section work" id="work">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__subtitle">My Journey</span>
-                    <h2 class="section__title">My <span class="text-gradient">Resume</span></h2>
-                </div>
-
-                <div class="experience__content">
-                    <div class="experience__timeline" data-aos="fade-right">
-                        <h3><i class="fas fa-briefcase"></i> Experience</h3>
-
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <span class="timeline-badge">Current</span>
-                                    <h4>UI/UX Designer</h4>
-                                    <span class="company">IT Starter • Full Time</span>
-                                    <span class="duration"><i class="far fa-calendar"></i> Jan 2024 - Present</span>
-                                    <ul class="timeline-list">
-                                        <li>Conducted user research and usability testing and developing wireframes and
-                                            prototypes</li>
-                                        <li>Created intuitive UI based on user-centered design principles</li>
-                                        <li>Collaborating with developers to ensure accurate design implementation</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-                    <div class="experience__certifications" data-aos="fade-left">
-                        <h3><i class="fas fa-certificate"></i> Certifications</h3>
-
-                        <div class="certifications-grid">
-                            <div class="cert-card">
-                                <div class="cert-icon">
-                                    <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy">
-                                </div>
-                                <div class="cert-content">
-                                    <h4>Complete UI/UX Bootcamp</h4>
-                                    <span>Udemy</span>
-                                </div>
-                            </div>
-                            <div class="cert-card">
-                                <div class="cert-icon">
-                                    <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy">
-                                </div>
-                                <div class="cert-content">
-                                    <h4>UI & Design Thinking</h4>
-                                    <span>Udemy</span>
-                                </div>
-                            </div>
-                            <div class="cert-card">
-                                <div class="cert-icon">
-                                    <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy">
-                                </div>
-                                <div class="cert-content">
-                                    <h4>Figma UI Design</h4>
-                                    <span>Udemy</span>
-                                </div>
-                            </div>
-                            <div class="cert-card">
-                                <div class="cert-icon">
-                                    <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy">
-                                </div>
-                                <div class="cert-content">
-                                    <h4>UI Design & User Experience</h4>
-                                    <span>Udemy</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Resume Download -->
-                        <div class="resume-download" data-aos="fade-up" data-aos-delay="200">
-                            <div class="resume-card">
-                                <div class="resume-icon">
-                                    <i class="fas fa-file-pdf"></i>
-                                </div>
-                                <div class="resume-content">
-                                    <h4>Download My Resume</h4>
-                                    <p>Get a detailed overview of my skills and experience</p>
-                                </div>
-                                <a href="kishan-resume.pdf" download class="resume-btn">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download CV</span>
-                                </a>
-                            </div>
-                        </div>
+                <div class="section__head">
+                    <span class="section__num">02</span>
+                    <div class="section__head-right">
+                        <h2 class="section__title">Selected<br><em>Work</em></h2>
+                        <p class="section__lead">A curated selection across digital product design, branding, and illustration.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Portfolio Section -->
-        <section class="portfolio section" id="portfolio">
-            <div class="portfolio__bg-text">PORTFOLIO</div>
-
-            <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__subtitle">My Works</span>
-                    <h2 class="section__title">My <span class="text-gradient">Portfolio</span></h2>
-                    <p class="section__description">
-                        Check out some of my recent projects and designs. I specialize in creating intuitive
-                        and engaging user interfaces that balance aesthetics and functionality.
-                    </p>
-                </div>
-
-                <div class="portfolio__filters" data-aos="fade-up" data-aos-delay="100">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="web">Web Design</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                    <button class="filter-btn" data-filter="ui">UI Design</button>
+                <div class="work__filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="ui">UI</button>
                     <button class="filter-btn" data-filter="branding">Branding</button>
                 </div>
 
-                <div class="portfolio__grid" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item" data-category="web">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
+                <div class="work__grid">
+                    <div class="work-item work-item--large" data-category="web">
+                        <a href="https://www.behance.net/gallery/229053881/AI-Generated-Portfolio-Website-Mockup-in-Figma" target="_blank" rel="noopener" class="work-card">
+                            <div class="work-card__img">
                                 <img src="img/ai-portfolio.png" alt="AI Portfolio Design">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-actions">
-                                        <a href="https://www.behance.net/gallery/229053881/AI-Generated-Portfolio-Website-Mockup-in-Figma"
-                                            target="_blank" class="action-btn"><i class="fas fa-link"></i></a>
-                                        <a href="https://www.behance.net/gallery/229053881/AI-Generated-Portfolio-Website-Mockup-in-Figma"
-                                            target="_blank" class="action-btn"><i class="fas fa-search-plus"></i></a>
-                                    </div>
+                            </div>
+                            <div class="work-card__info">
+                                <div class="work-card__meta">
+                                    <span class="work-card__cat">Web Design</span>
+                                    <span class="work-card__year">2024</span>
                                 </div>
+                                <h3 class="work-card__title">AI Portfolio Design</h3>
+                                <span class="work-card__link">View on Behance <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>AI Portfolio Design</h4>
-                                <span>Web Design</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <div class="portfolio-item" data-category="ui">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="img/cyber-security.png" alt="Cyber Security Page">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-actions">
-                                        <a href="https://www.behance.net/gallery/146333163/cyber-security-page"
-                                            target="_blank" class="action-btn"><i class="fas fa-link"></i></a>
-                                        <a href="https://www.behance.net/gallery/146333163/cyber-security-page"
-                                            target="_blank" class="action-btn"><i class="fas fa-search-plus"></i></a>
-                                    </div>
+                    <div class="work-item" data-category="ui">
+                        <a href="https://www.behance.net/gallery/146333163/cyber-security-page" target="_blank" rel="noopener" class="work-card">
+                            <div class="work-card__img">
+                                <img src="img/cyber-security.png" alt="Cyber Security Portal">
+                            </div>
+                            <div class="work-card__info">
+                                <div class="work-card__meta">
+                                    <span class="work-card__cat">UI Design</span>
+                                    <span class="work-card__year">2023</span>
                                 </div>
+                                <h3 class="work-card__title">Cyber Security Portal</h3>
+                                <span class="work-card__link">View on Behance <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>Cyber Security Portal</h4>
-                                <span>UI Design</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <div class="portfolio-item" data-category="branding">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=600&fit=crop"
-                                    alt="Lighthouse Illustration">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-actions">
-                                        <a href="https://www.behance.net/gallery/203699749/Illustration-of-Lighthouse-ultra-minimalistic"
-                                            target="_blank" class="action-btn"><i class="fas fa-link"></i></a>
-                                        <a href="https://www.behance.net/gallery/203699749/Illustration-of-Lighthouse-ultra-minimalistic"
-                                            target="_blank" class="action-btn"><i class="fas fa-search-plus"></i></a>
-                                    </div>
+                    <div class="work-item" data-category="branding">
+                        <a href="https://www.behance.net/gallery/203699749/Illustration-of-Lighthouse-ultra-minimalistic" target="_blank" rel="noopener" class="work-card">
+                            <div class="work-card__img">
+                                <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&h=600&fit=crop" alt="Minimal Lighthouse">
+                            </div>
+                            <div class="work-card__info">
+                                <div class="work-card__meta">
+                                    <span class="work-card__cat">Illustration</span>
+                                    <span class="work-card__year">2024</span>
                                 </div>
+                                <h3 class="work-card__title">Minimal Lighthouse</h3>
+                                <span class="work-card__link">View on Behance <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>Minimal Lighthouse</h4>
-                                <span>Branding / Illustration</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <div class="portfolio-item" data-category="web">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1454165833767-6216d518f0e3?w=800&h=600&fit=crop"
-                                    alt="Business Accounting">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-actions">
-                                        <a href="https://www.behance.net/gallery/200335793/Streamline-Your-Business-Accounting"
-                                            target="_blank" class="action-btn"><i class="fas fa-link"></i></a>
-                                        <a href="https://www.behance.net/gallery/200335793/Streamline-Your-Business-Accounting"
-                                            target="_blank" class="action-btn"><i class="fas fa-search-plus"></i></a>
-                                    </div>
+                    <div class="work-item work-item--large" data-category="web">
+                        <a href="https://www.behance.net/gallery/200335793/Streamline-Your-Business-Accounting" target="_blank" rel="noopener" class="work-card">
+                            <div class="work-card__img">
+                                <img src="https://images.unsplash.com/photo-1454165833767-6216d518f0e3?w=800&h=600&fit=crop" alt="Business Accounting">
+                            </div>
+                            <div class="work-card__info">
+                                <div class="work-card__meta">
+                                    <span class="work-card__cat">Web Application</span>
+                                    <span class="work-card__year">2024</span>
                                 </div>
+                                <h3 class="work-card__title">Business Accounting</h3>
+                                <span class="work-card__link">View on Behance <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>Business Accounting</h4>
-                                <span>Web Application</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <div class="portfolio-item" data-category="branding">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop"
-                                    alt="Trip Like a Foodie">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-actions">
-                                        <a href="https://www.behance.net/gallery/188219133/Vector-Trip-Like-a-Foodie"
-                                            target="_blank" class="action-btn"><i class="fas fa-link"></i></a>
-                                        <a href="https://www.behance.net/gallery/188219133/Vector-Trip-Like-a-Foodie"
-                                            target="_blank" class="action-btn"><i class="fas fa-search-plus"></i></a>
-                                    </div>
+                    <div class="work-item work-item--half" data-category="branding">
+                        <a href="https://www.behance.net/gallery/188219133/Vector-Trip-Like-a-Foodie" target="_blank" rel="noopener" class="work-card">
+                            <div class="work-card__img">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop" alt="Foodie Adventures">
+                            </div>
+                            <div class="work-card__info">
+                                <div class="work-card__meta">
+                                    <span class="work-card__cat">Illustration</span>
+                                    <span class="work-card__year">2023</span>
                                 </div>
+                                <h3 class="work-card__title">Foodie Adventures</h3>
+                                <span class="work-card__link">View on Behance <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>Foodie Adventures</h4>
-                                <span>Illustration</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <div class="portfolio-item" data-category="branding">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop"
-                                    alt="Man working on Laptop">
-                                <div class="portfolio-overlay">
-                                    <div class="portfolio-actions">
-                                        <a href="https://www.behance.net/gallery/179977075/Vector-illustration-of-a-man-working-on-the-laptop"
-                                            target="_blank" class="action-btn"><i class="fas fa-link"></i></a>
-                                        <a href="https://www.behance.net/gallery/179977075/Vector-illustration-of-a-man-working-on-the-laptop"
-                                            target="_blank" class="action-btn"><i class="fas fa-search-plus"></i></a>
-                                    </div>
+                    <div class="work-item work-item--half" data-category="branding">
+                        <a href="https://www.behance.net/gallery/179977075/Vector-illustration-of-a-man-working-on-the-laptop" target="_blank" rel="noopener" class="work-card">
+                            <div class="work-card__img">
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop" alt="Digital Workspace">
+                            </div>
+                            <div class="work-card__info">
+                                <div class="work-card__meta">
+                                    <span class="work-card__cat">Illustration</span>
+                                    <span class="work-card__year">2023</span>
                                 </div>
+                                <h3 class="work-card__title">Digital Workspace</h3>
+                                <span class="work-card__link">View on Behance <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>Digital Workspace</h4>
-                                <span>Illustration</span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
-                <div class="portfolio__social" data-aos="fade-up">
-                    <h4>Find Me On</h4>
-                    <div class="social-platforms">
-                        <a href="https://www.behance.net/kishanspatel" target="_blank" class="platform-card">
-                            <i class="fab fa-behance"></i>
-                            <span class="platform-name">Behance</span>
-                            <span class="platform-desc">View my design portfolio</span>
+                <div class="work__platforms">
+                    <p>Find more on</p>
+                    <div class="platforms">
+                        <a href="https://www.behance.net/kishanspatel" target="_blank" rel="noopener" class="platform magnetic">
+                            <i class="fab fa-behance"></i> Behance
                         </a>
-                        <a href="https://dribbble.com/kishanspatel" target="_blank" class="platform-card">
-                            <i class="fab fa-dribbble"></i>
-                            <span class="platform-name">Dribbble</span>
-                            <span class="platform-desc">Check out my shots</span>
+                        <a href="https://dribbble.com/kishanspatel" target="_blank" rel="noopener" class="platform magnetic">
+                            <i class="fab fa-dribbble"></i> Dribbble
                         </a>
-                        <a href="https://in.pinterest.com/kishanpatel1311/" target="_blank" class="platform-card">
-                            <i class="fab fa-pinterest"></i>
-                            <span class="platform-name">Pinterest</span>
-                            <span class="platform-desc">Explore my inspiration</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/kishanspatel49/" target="_blank" class="platform-card">
-                            <i class="fab fa-linkedin"></i>
-                            <span class="platform-name">LinkedIn</span>
-                            <span class="platform-desc">Connect professionally</span>
+                        <a href="https://in.pinterest.com/kishanpatel1311/" target="_blank" rel="noopener" class="platform magnetic">
+                            <i class="fab fa-pinterest"></i> Pinterest
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact section" id="contact">
-            <div class="contact__bg-text">CONTACT</div>
-
+        <!-- ── SERVICES ── -->
+        <section class="section services" id="services">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__subtitle">Get In Touch</span>
-                    <h2 class="section__title">Contact <span class="text-gradient">Me</span></h2>
-                    <p class="section__description">
-                        Feel free to get in touch with me. I am always open to discussing new projects,
-                        creative ideas or opportunities to be part of your vision.
-                    </p>
+                <div class="section__head">
+                    <span class="section__num">03</span>
+                    <div class="section__head-right">
+                        <h2 class="section__title">What I<br><em>Do</em></h2>
+                        <p class="section__lead">Four disciplines, one designer. I work across the full product design spectrum — from the first user interview to the final dev handoff.</p>
+                    </div>
                 </div>
 
-                <div class="contact__content">
-                    <div class="contact__form-wrapper" data-aos="fade-right">
-                        <h3>Get In Touch</h3>
-                        <form class="contact__form" id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                                <span class="input-focus"></span>
+                <div class="services__grid">
+                    <div class="service-card">
+                        <div class="service-card__num">01</div>
+                        <div class="service-card__icon"><i class="fas fa-search"></i></div>
+                        <h3 class="service-card__title">UX Research & Strategy</h3>
+                        <p class="service-card__desc">Understanding users before touching a pixel. I run interviews, usability tests, competitive analyses, and journey maps that give design decisions a solid foundation.</p>
+                        <ul class="service-card__list">
+                            <li>User interviews & surveys</li>
+                            <li>Usability testing</li>
+                            <li>Competitive analysis</li>
+                            <li>Journey & empathy mapping</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__num">02</div>
+                        <div class="service-card__icon"><i class="fas fa-layer-group"></i></div>
+                        <h3 class="service-card__title">UI Design</h3>
+                        <p class="service-card__desc">High-fidelity screens built to be used, not just admired. I design interfaces that balance visual precision with usability — from dashboards to consumer apps.</p>
+                        <ul class="service-card__list">
+                            <li>High-fidelity screen design</li>
+                            <li>Design systems & component libraries</li>
+                            <li>Responsive web & mobile UI</li>
+                            <li>Developer-ready Figma specs</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__num">03</div>
+                        <div class="service-card__icon"><i class="fas fa-mouse-pointer"></i></div>
+                        <h3 class="service-card__title">Prototyping & Interaction</h3>
+                        <p class="service-card__desc">Making ideas tangible before a single line of code. Interactive Figma flows, micro-animations, and clickable prototypes that communicate intent precisely.</p>
+                        <ul class="service-card__list">
+                            <li>Interactive Figma prototypes</li>
+                            <li>Micro-interaction design</li>
+                            <li>Motion design (After Effects)</li>
+                            <li>Clickable user flows for testing</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__num">04</div>
+                        <div class="service-card__icon"><i class="fas fa-pen-nib"></i></div>
+                        <h3 class="service-card__title">Branding & Visual Identity</h3>
+                        <p class="service-card__desc">The visual language a brand speaks. From logo design to full brand systems and illustration — crafting identities that are distinctive, consistent, and built to scale.</p>
+                        <ul class="service-card__list">
+                            <li>Logo & mark design</li>
+                            <li>Brand guidelines & systems</li>
+                            <li>Vector illustration (Illustrator)</li>
+                            <li>Marketing & campaign visuals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── PROCESS ── -->
+        <section class="section process" id="process">
+            <div class="container">
+                <div class="section__head">
+                    <span class="section__num">04</span>
+                    <div class="section__head-right">
+                        <h2 class="section__title">My Design<br><em>Process</em></h2>
+                        <p class="section__lead">Every project follows a rigorous five-step cycle that keeps users at the centre and quality at the end.</p>
+                    </div>
+                </div>
+
+                <div class="process__steps">
+                    <div class="process-step">
+                        <div class="process-step__head">
+                            <span class="process-step__num">01</span>
+                            <div class="process-step__icon"><i class="fas fa-binoculars"></i></div>
+                        </div>
+                        <h3 class="process-step__title">Research</h3>
+                        <p class="process-step__desc">Understand the user's world, the business goals, and the competitive landscape before any sketching begins. Interviews, analytics, and desk research surface the real problem — not the assumed one.</p>
+                    </div>
+                    <div class="process-step__connector" aria-hidden="true"></div>
+                    <div class="process-step">
+                        <div class="process-step__head">
+                            <span class="process-step__num">02</span>
+                            <div class="process-step__icon"><i class="fas fa-pencil-ruler"></i></div>
+                        </div>
+                        <h3 class="process-step__title">Wireframe</h3>
+                        <p class="process-step__desc">Translate insights into structure. Low-fidelity wireframes map the information architecture and user flows — fast, cheap to change, and perfect for aligning stakeholders before committing to visuals.</p>
+                    </div>
+                    <div class="process-step__connector" aria-hidden="true"></div>
+                    <div class="process-step">
+                        <div class="process-step__head">
+                            <span class="process-step__num">03</span>
+                            <div class="process-step__icon"><i class="fas fa-magic"></i></div>
+                        </div>
+                        <h3 class="process-step__title">Prototype</h3>
+                        <p class="process-step__desc">Bring the design to life in Figma — interactive flows, transitions, and micro-interactions that simulate the real product. A great prototype answers questions without writing a word of code.</p>
+                    </div>
+                    <div class="process-step__connector" aria-hidden="true"></div>
+                    <div class="process-step">
+                        <div class="process-step__head">
+                            <span class="process-step__num">04</span>
+                            <div class="process-step__icon"><i class="fas fa-vial"></i></div>
+                        </div>
+                        <h3 class="process-step__title">Test</h3>
+                        <p class="process-step__desc">Put the prototype in front of real users. Usability sessions, feedback loops, and iteration until the design is genuinely intuitive — not just visually polished.</p>
+                    </div>
+                    <div class="process-step__connector" aria-hidden="true"></div>
+                    <div class="process-step">
+                        <div class="process-step__head">
+                            <span class="process-step__num">05</span>
+                            <div class="process-step__icon"><i class="fas fa-rocket"></i></div>
+                        </div>
+                        <h3 class="process-step__title">Ship</h3>
+                        <p class="process-step__desc">Hand off with precision — annotated specs, organised Figma files, design tokens, and ongoing QA support. Design doesn't end at delivery; it ends when users are using it successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── EXPERIENCE ── -->
+        <section class="section experience" id="experience">
+            <div class="container">
+                <div class="section__head">
+                    <span class="section__num">05</span>
+                    <div class="section__head-right">
+                        <h2 class="section__title">Experience<br>&amp; <em>Journey</em></h2>
+                    </div>
+                </div>
+
+                <div class="exp__layout">
+                    <div class="exp__timeline">
+                        <h3 class="exp__col-title"><i class="fas fa-briefcase"></i> Work History</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-body">
+                                    <div class="timeline-header">
+                                        <h4>UI/UX Designer</h4>
+                                        <span class="timeline-badge">Current</span>
+                                    </div>
+                                    <span class="timeline-company">IT Starter · Full Time</span>
+                                    <span class="timeline-date"><i class="far fa-calendar-alt"></i> Jan 2024 — Present</span>
+                                    <ul class="timeline-list">
+                                        <li>Conducted user research and usability testing; developed wireframes and prototypes</li>
+                                        <li>Created intuitive UI grounded in user-centered design principles</li>
+                                        <li>Collaborated with developers to ensure accurate design implementation</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                                <span class="input-focus"></span>
+                        </div>
+                    </div>
+
+                    <div class="exp__certs">
+                        <h3 class="exp__col-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                        <div class="certs-list">
+                            <div class="cert-item">
+                                <div class="cert-icon-wrap"><img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy"></div>
+                                <div class="cert-text"><h4>Complete UI/UX Bootcamp</h4><span>Udemy</span></div>
                             </div>
-                            <div class="form-group">
+                            <div class="cert-item">
+                                <div class="cert-icon-wrap"><img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy"></div>
+                                <div class="cert-text"><h4>UI &amp; Design Thinking</h4><span>Udemy</span></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon-wrap"><img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy"></div>
+                                <div class="cert-text"><h4>Figma UI Design</h4><span>Udemy</span></div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-icon-wrap"><img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy"></div>
+                                <div class="cert-text"><h4>UI Design &amp; User Experience</h4><span>Udemy</span></div>
+                            </div>
+                        </div>
+
+                        <div class="exp__resume-cta">
+                            <div class="resume-cta-content">
+                                <i class="fas fa-file-pdf"></i>
+                                <div>
+                                    <h4>Full Résumé</h4>
+                                    <p>Detailed overview of skills and experience</p>
+                                </div>
+                            </div>
+                            <a href="kishan-resume.pdf" download class="btn btn--primary btn--sm magnetic">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CONTACT ── -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="section__head">
+                    <span class="section__num">06</span>
+                    <div class="section__head-right">
+                        <h2 class="section__title">Let's<br><em>Talk</em></h2>
+                    </div>
+                </div>
+
+                <div class="contact__layout">
+                    <div class="contact__left">
+                        <p class="contact__intro">
+                            I'm always open to discussing new projects, creative ideas, or
+                            opportunities to be part of your vision. Let's build something great.
+                        </p>
+                        <div class="contact__links">
+                            <a href="mailto:kishanpatel4999@gmail.com" class="contact-link">
+                                <span class="contact-link__icon"><i class="fas fa-envelope"></i></span>
+                                <div>
+                                    <span class="contact-link__label">Email</span>
+                                    <span class="contact-link__value">kishanpatel4999@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="tel:+917096855325" class="contact-link">
+                                <span class="contact-link__icon"><i class="fas fa-phone-alt"></i></span>
+                                <div>
+                                    <span class="contact-link__label">Phone</span>
+                                    <span class="contact-link__value">+91 7096855325</span>
+                                </div>
+                            </a>
+                            <div class="contact-link">
+                                <span class="contact-link__icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <div>
+                                    <span class="contact-link__label">Location</span>
+                                    <span class="contact-link__value">Ahmedabad, Gujarat, India</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact__social">
+                            <a href="https://www.behance.net/kishanspatel" target="_blank" rel="noopener" class="contact__social-link" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                            <a href="https://dribbble.com/kishanspatel" target="_blank" rel="noopener" class="contact__social-link" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                            <a href="https://www.linkedin.com/in/kishanspatel49/" target="_blank" rel="noopener" class="contact__social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://in.pinterest.com/kishanpatel1311/" target="_blank" rel="noopener" class="contact__social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact__right">
+                        <form class="contact-form" id="contact-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <input type="text" id="name" name="name" placeholder=" " required autocomplete="name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                                <div class="form-field">
+                                    <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+                                    <label for="email">Email Address</label>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" id="subject" name="subject" placeholder=" ">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="Subject">
-                                <span class="input-focus"></span>
                             </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Your Message"
-                                    required></textarea>
-                                <span class="input-focus"></span>
+                            <div class="form-field">
+                                <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                                <label for="message">Your Message</label>
                             </div>
-                            <button type="submit" class="btn btn--primary btn--full">
+                            <button type="submit" class="btn btn--primary btn--full magnetic">
                                 <span>Send Message</span>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
-                    </div>
-
-                    <div class="contact__info" data-aos="fade-left">
-                        <h3>Contact Information</h3>
-
-                        <div class="info-cards">
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h4>Location</h4>
-                                    <p>Ahmedabad, Gujarat, India</p>
-                                </div>
-                            </div>
-
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h4>Email</h4>
-                                    <a href="mailto:kishanpatel4999@gmail.com">kishanpatel4999@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="info-card">
-                                <div class="info-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="info-content">
-                                    <h4>Phone</h4>
-                                    <a href="tel:+917096855325">+91 7096855325</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact__social">
-                            <h4>Follow Me</h4>
-                            <div class="social-links">
-                                <a href="https://www.behance.net/kishanspatel" target="_blank" class="social-link"><i
-                                        class="fab fa-behance"></i></a>
-                                <a href="https://dribbble.com/kishanspatel" target="_blank" class="social-link"><i
-                                        class="fab fa-dribbble"></i></a>
-                                <a href="https://in.pinterest.com/kishanpatel1311/" target="_blank"
-                                    class="social-link"><i class="fab fa-pinterest"></i></a>
-                                <a href="https://www.linkedin.com/in/kishanspatel49/" target="_blank"
-                                    class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="contact__map">
-                            <h4>Location Map</h4>
-                            <div class="map-wrapper">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.70717912873!2d72.41492637812168!3d23.02049634138746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1705686400000!5m2!1sen!2sin"
-                                    width="100%" height="200" style="border:0; border-radius: 12px;" allowfullscreen=""
-                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -762,75 +631,22 @@
     </main>
 
     <!-- Footer -->
-    <!-- Footer -->
-    <footer class="footer-ref">
-
-
-        <div class="container">
-            <div class="footer__grid-container" data-aos="fade-up">
-                <!-- Column 1: Logo & Info -->
-                <div class="footer__col">
-                    <img src="img/kishanp.svg" alt="Kishan Logo" class="footer__ref-logo">
-                    <div class="footer__legal-links-left">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Cookies Settings</a>
-                    </div>
-                </div>
-
-                <!-- Column 2: Navigation -->
-                <div class="footer__col">
-                    <span class="footer__col-heading">Navigation</span>
-                    <ul class="footer__links-list">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Contact Info -->
-                <div class="footer__col">
-                    <span class="footer__col-heading">Contact</span>
-                    <div class="footer__contact-details">
-                        <div class="footer__contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:kishanpatel4999@gmail.com">kishanpatel4999@gmail.com</a>
-                        </div>
-                        <div class="footer__contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <a href="tel:+917096855325">+91 7096855325</a>
-                        </div>
-                        <div class="footer__contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Ahmedabad, Gujarat, India</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 4: Let's Collaborate -->
-                <div class="footer__col">
-                    <span class="footer__col-heading">Let's Collaborate</span>
-                    <p class="footer__cta-desc">
-                        Start your next project today! Get in touch to discuss details, share your ideas, or receive a
-                        custom quote.
-                    </p>
-                    <a href="#contact" class="footer__cta-btn">Contact Me</a>
-                </div>
-            </div>
-
-            <!-- Copyright Row -->
-            <div class="footer__copyright-row">
-                &copy; 2025 Kishan S. Patel. All rights reserved.
+    <footer class="footer">
+        <div class="container footer__inner">
+            <img src="img/kisulogo.svg" alt="Kishan" height="20" width="60">
+            <p class="footer__copy">© 2025 Kishan S. Patel. All rights reserved.</p>
+            <div class="footer__links">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </footer>
 
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
