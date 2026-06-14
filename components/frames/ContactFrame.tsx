@@ -2,13 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-
-// TODO: Replace with your real contact links
-const CONTACT_LINKS = [
-  { label: 'Email', value: 'kishanpatel4999@gmail.com', href: 'mailto:kishanpatel4999@gmail.com' },
-  { label: 'Behance', value: 'behance.net/kishanspatel', href: 'https://behance.net/kishanspatel' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/kishanspatel49', href: 'https://linkedin.com/in/kishanspatel49' },
-]
+import { CONTACT_LINKS } from '@/lib/content'
 
 const container = {
   hidden: {},

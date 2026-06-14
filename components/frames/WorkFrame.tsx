@@ -1,53 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const PROCESS_LABELS = ['Research', 'Wireframe', 'Design', 'Ship']
-
-const PROJECTS = [
-  {
-    id: 'rum',
-    title: 'RUM Module',
-    subtitle: 'Real User Monitoring — ObserveOps',
-    year: '2023',
-    scope: 'End-to-end · Full module',
-    process: [true, true, true, true],
-    contributions: [
-      'Led user research with engineering and product stakeholders to define data needs',
-      'Designed complete information architecture — session replay, performance metrics, error tracking',
-      'Built the UI from scratch: dashboards, drill-down flows, alert configurations',
-    ],
-    tags: ['Research-led', 'Dashboard', 'Data Viz', 'Enterprise'],
-  },
-  {
-    id: 'metric',
-    title: 'Metric Explorer',
-    subtitle: 'Query & Visualisation Redesign — ObserveOps',
-    year: '2023',
-    scope: 'Redesign · Existing module',
-    process: [false, true, true, true],
-    contributions: [
-      'Audited pain points in the existing query builder through stakeholder walkthroughs',
-      'Simplified complex multi-metric query interface with progressive disclosure',
-      'Redesigned chart types, time range selectors, and comparison views',
-    ],
-    tags: ['Redesign', 'Query UI', 'Data Viz', 'Figma'],
-  },
-  {
-    id: 'dashboard',
-    title: 'Dashboard System',
-    subtitle: 'Create Dashboard · Add Widget · Global Filter',
-    year: '2022 — 2024',
-    scope: 'Feature suite · Ongoing',
-    process: [true, true, true, true],
-    contributions: [
-      'Designed "Create Dashboard" and "Add New Widget" flows with template-based creation',
-      'Built the Global Filter panel and Search system for cross-module navigation',
-      'Covered Topology map views and Trap log management interfaces',
-    ],
-    tags: ['System Design', 'Widget Library', 'Navigation', 'Topology'],
-  },
-]
+import { PROJECTS, PROCESS_LABELS } from '@/lib/content'
 
 const container = {
   hidden: {},

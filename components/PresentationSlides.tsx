@@ -252,6 +252,10 @@ const SP = 'clamp(28px, 4.5vh, 64px) clamp(28px, 5vw, 80px) clamp(20px, 3.5vh, 4
 // Slide: About
 // ─────────────────────────────────────────────────────────────
 
+// NOTE: This deck keeps its OWN curated copy. The canvas frames + mobile reel
+// share lib/content.ts as their single source of truth; this presentation does
+// not yet (its wording/counts intentionally differ and it has deck-only data).
+// When updating a shared fact, change it here AND in lib/content.ts.
 const SPECS = ['Product Design', 'UX Research', 'Dashboard UI', 'Design Systems', 'Enterprise UX', 'Interaction Design']
 const TOOLS_LIST = ['Figma', 'Adobe XD', 'Illustrator', 'Photoshop', 'After Effects']
 
@@ -363,7 +367,7 @@ function SlideAbout() {
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 52, color: 'rgba(200,169,110,0.12)', fontFamily: 'var(--font-display)', fontWeight: 700 }}>KP</div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/kisu2.png" alt="Kishan S. Patel"
+              src="/kishan-profile.png" alt="Kishan S. Patel"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'relative', zIndex: 1 }}
               onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
             />

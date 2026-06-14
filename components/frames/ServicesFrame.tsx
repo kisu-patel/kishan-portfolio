@@ -1,37 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const SERVICES = [
-  {
-    num: '01',
-    title: 'Product UX Design',
-    focus: 'Enterprise · SaaS · Dashboard UI',
-    description: 'End-to-end product design for complex data-heavy platforms — from IA and user flows to polished high-fidelity interfaces.',
-    deliverables: ['User flows', 'Wireframes', 'Hi-fi UI', 'Component library'],
-  },
-  {
-    num: '02',
-    title: 'UX Research',
-    focus: 'Interviews · Audit · Synthesis',
-    description: 'Structured research that turns stakeholder ambiguity into clear design direction — interviews, journey maps, competitive audits.',
-    deliverables: ['User interviews', 'Journey maps', 'Personas', 'Design brief'],
-  },
-  {
-    num: '03',
-    title: 'UI & Visual Design',
-    focus: 'Figma · Design Systems · Specs',
-    description: 'Pixel-precise interfaces grounded in system-level thinking. I build reusable components and maintain design consistency at scale.',
-    deliverables: ['Design system', 'Mockups', 'Dev specs', 'Assets'],
-  },
-  {
-    num: '04',
-    title: 'Prototyping & Handoff',
-    focus: 'Figma · Interactive · Specs',
-    description: 'Interactive Figma prototypes for stakeholder validation and usability testing, with annotated developer handoff.',
-    deliverables: ['Click prototypes', 'Usability tests', 'Annotations', 'Dev ready'],
-  },
-]
+import { SERVICES } from '@/lib/content'
 
 const container = {
   hidden: {},

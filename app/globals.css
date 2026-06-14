@@ -399,3 +399,227 @@ html, body {
     opacity: 0.8;
   }
 }
+
+/* ── Touch / mobile: restore native cursor (desktop hides it for the
+      custom GlobalCursor, which is disabled on touch — see GlobalCursor.tsx) ── */
+@media (pointer: coarse) {
+  *, *::before, *::after { cursor: auto !important; }
+  input, textarea, select, [contenteditable] { cursor: text !important; }
+  button, a, [role="button"], .nav-item { cursor: pointer !important; }
+}
+
+/* ── Mobile film reel ──────────────────────────────────────── */
+.mobile-reel {
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: #080808;
+}
+.mobile-reel::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+.mobile-scene {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Vertical film sprocket rails down both edges */
+.sprocket-rail {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 18px;
+  z-index: 30;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 14px,
+      rgba(255,255,255,0.05) 14px,
+      rgba(255,255,255,0.05) 26px,
+      transparent 26px,
+      transparent 40px
+    );
+}
+.sprocket-rail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 16px,
+      #050505 16px,
+      #050505 24px,
+      transparent 24px,
+      transparent 40px
+    );
+  border-radius: 2px;
+}
+.sprocket-rail.left  { left: 0;  border-right: 1px solid rgba(255,255,255,0.05); }
+.sprocket-rail.right { right: 0; border-left: 1px solid rgba(255,255,255,0.05); }
+
+.mobile-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 31;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 250px 250px;
+  opacity: 0.035;
+  mix-blend-mode: screen;
+  animation: grain 0.4s steps(1) infinite;
+}
+
+/* Ambient grid dots behind each scene */
+.mobile-scene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(200,169,110,0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 45%, black 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 45%, black 35%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* Padded content column inside a scene (clears the 18px sprocket rails) */
+.m-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 92px 34px 104px;
+  gap: 18px;
+}
+
+/* ── Mobile typography helpers ─────────────────────────────── */
+.m-eyebrow {
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.m-num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.m-title {
+  font-size: clamp(2rem, 11vw, 3rem);
+  font-weight: 700;
+  color: #f2ede6;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.98;
+}
+.m-meta {
+  font-size: 9px;
+  color: #3a3733;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  text-align: right;
+  flex-shrink: 0;
+}
+.m-divider {
+  width: 38px;
+  height: 1px;
+  background: var(--accent);
+}
+.m-body {
+  font-size: 14px;
+  color: #807b73;
+  line-height: 1.75;
+}
+
+/* Cards & chips */
+.m-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 18px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.m-chip {
+  font-size: 11px;
+  color: #6f6b64;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 4px 10px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Bottom jump-nav pill */
+.m-nav {
+  position: fixed;
+  left: 50%;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(12,12,12,0.86);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  padding: 8px 14px;
+  box-shadow: 0 10px 34px rgba(0,0,0,0.5);
+}
+.m-nav-dots { display: flex; align-items: center; gap: 9px; }
+.m-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #38342e; border: none; padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+.m-dot.active { background: var(--accent); transform: scale(1.35); }
+.m-nav-cta {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent);
+  text-decoration: none; white-space: nowrap;
+}
+
+/* Top status bar */
+.m-topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(18px + env(safe-area-inset-top, 0px)) 30px 14px;
+  pointer-events: none;
+  background: linear-gradient(#080808 30%, rgba(8,8,8,0));
+}
+.m-scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--accent);
+  z-index: 41;
+  transform-origin: left;
+}

@@ -1,44 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const STEPS = [
-  {
-    number: '01',
-    label: 'Research',
-    focus: 'Understand',
-    description: 'User interviews, stakeholder walkthroughs, competitive audits. Turn ambiguity into a clear problem statement.',
-    output: 'Problem brief · Journey map',
-  },
-  {
-    number: '02',
-    label: 'Information Architecture',
-    focus: 'Structure',
-    description: 'Define the data model and navigation hierarchy before touching visual design. Structure first, aesthetics second.',
-    output: 'IA map · User flows',
-  },
-  {
-    number: '03',
-    label: 'Wireframe',
-    focus: 'Validate',
-    description: 'Low-fidelity flows tested with stakeholders to validate structure and edge cases without wasting polish.',
-    output: 'Lo-fi prototype · Feedback',
-  },
-  {
-    number: '04',
-    label: 'High-Fidelity UI',
-    focus: 'Design',
-    description: 'Pixel-precise Figma screens with system-level component thinking — consistent, scalable, and dev-ready.',
-    output: 'Hi-fi screens · Component library',
-  },
-  {
-    number: '05',
-    label: 'Handoff & Ship',
-    focus: 'Deliver',
-    description: 'Annotated dev specs, interaction notes, asset exports. Stay available through implementation for pixel-perfect output.',
-    output: 'Specs · Dev annotation · QA',
-  },
-]
+import { STEPS } from '@/lib/content'
 
 export default function ProcessFrame() {
   return (

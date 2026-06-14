@@ -1,63 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const TIMELINE = [
-  {
-    role: 'Product Designer',
-    company: 'Motadata',
-    period: 'Jul 2022 — Present',
-    type: 'Full-time',
-    accent: true,
-    live: true,
-    bullets: [
-      'Sole UX designer on ObserveOps — IT infrastructure monitoring platform',
-      'Designed full RUM Module from research to final UI delivery',
-      'Redesigned Metric Explorer, Dashboard creation, Global Filter, Topology, Trap',
-      'Maintains and evolves the product design system in Figma',
-    ],
-  },
-  {
-    role: 'UI Designer',
-    company: 'Internship · Ahmedabad',
-    period: 'Feb 2022 — Apr 2022',
-    type: 'Internship',
-    accent: false,
-    live: false,
-    bullets: [
-      'Completed 2.5-month UI design internship',
-      'Worked on interface design and visual component creation',
-    ],
-  },
-  {
-    role: 'Graphic Designer',
-    company: 'Freelance',
-    period: 'Dec 2021 — Feb 2022',
-    type: 'Freelance',
-    accent: false,
-    live: false,
-    bullets: [
-      'Two months freelance graphic design before moving to UI/UX',
-    ],
-  },
-  {
-    role: 'MSC CA & IT',
-    company: 'K S School of Business Management · Gujarat University',
-    period: '2018 — 2023',
-    type: 'Education',
-    accent: false,
-    live: false,
-    bullets: [
-      '5-year integrated course in Computer Applications & Information Technology',
-      'Self-taught Photoshop, Illustrator, Adobe XD, and Figma during this period',
-    ],
-  },
-]
-
-const SKILLS_MAP = [
-  { category: 'Design', items: ['Figma', 'Adobe XD', 'Illustrator', 'Photoshop', 'After Effects'] },
-  { category: 'Process', items: ['UX Research', 'Wireframing', 'Prototyping', 'Usability Testing', 'Handoff'] },
-]
+import { TIMELINE, SKILLS_MAP, TENURE } from '@/lib/content'
 
 export default function ExperienceFrame() {
   return (
@@ -75,7 +19,7 @@ export default function ExperienceFrame() {
           <h2 className="frame-title" style={{ marginBottom: 0 }}>Experience</h2>
         </div>
         <p style={{ fontSize: 9, color: '#252320', letterSpacing: '0.14em', textTransform: 'uppercase', lineHeight: 1.9, textAlign: 'right' }}>
-          3+ YEARS<br />FULL-TIME
+          {TENURE} YEARS<br />FULL-TIME
         </p>
       </motion.div>
 
@@ -186,7 +130,7 @@ export default function ExperienceFrame() {
           >
             <p style={{ fontSize: 9, color: '#c8a96e', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 4 }}>CURRENT</p>
             <p style={{ fontSize: 24, fontWeight: 700, color: '#c8a96e', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
-              3+
+              {TENURE}
             </p>
             <p style={{ fontSize: 10, color: '#484541', marginTop: 3 }}>Years at Motadata</p>
           </motion.div>

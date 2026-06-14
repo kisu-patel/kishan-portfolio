@@ -12,6 +12,13 @@ export default function GlobalCursor() {
   const [clicking, setClicking] = useState(false)
   const [grabbing, setGrabbing] = useState(false)
   const [ripples, setRipples] = useState<Ripple[]>([])
+  // Touch devices have no pointer to track — render nothing and let the
+  // native cursor/touch handling take over (see globals.css pointer:coarse).
+  const [isTouch, setIsTouch] = useState(false)
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia('(pointer: coarse)').matches)
+  }, [])
 
   // Dot: nearly instant
   const dx = useSpring(mx, { damping: 65, stiffness: 2400, mass: 0.04 })
@@ -22,6 +29,7 @@ export default function GlobalCursor() {
   const ry = useSpring(my, { damping: 22, stiffness: 185, mass: 0.22 })
 
   useEffect(() => {
+    if (isTouch) return
     const onMove = (e: MouseEvent) => {
       mx.set(e.clientX)
       my.set(e.clientY)
@@ -49,7 +57,9 @@ export default function GlobalCursor() {
       window.removeEventListener('mousedown', onDown)
       window.removeEventListener('mouseup', onUp)
     }
-  }, [mx, my])
+  }, [mx, my, isTouch])
+
+  if (isTouch) return null
 
   return (
     <>

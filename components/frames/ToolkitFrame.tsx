@@ -2,35 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-
-const SKILL_DOMAINS = [
-  {
-    area: 'Research & Strategy', color: '#7ee8a8', icon: '◎', note: 'How I define the problem',
-    skills: ['Stakeholder Interviews', 'Heuristic Audits', 'Competitive Analysis', 'Journey Mapping', 'Usability Testing', 'Scope Definition'],
-  },
-  {
-    area: 'UI & Visual Design', color: '#c8a96e', icon: '◆', note: 'How I build the interface',
-    skills: ['High-fidelity Screens', 'Data Visualisation', 'Dashboard Layouts', 'Typography', 'Icon Design', 'Responsive UI'],
-  },
-  {
-    area: 'Systems & Craft', color: '#7eb8e8', icon: '▣', note: 'How I scale design',
-    skills: ['Component Libraries', 'Design Tokens', 'Style Guides', 'Dev Handoff', 'Motion Guidelines', 'Documentation'],
-  },
-  {
-    area: 'Prototyping & Motion', color: '#b87ee8', icon: '▶', note: 'How I communicate intent',
-    skills: ['Interactive Figma Flows', 'Micro-interactions', 'After Effects', 'Clickable Prototypes', 'Annotated Specs'],
-  },
-]
-
-const TOOLS   = ['Figma', 'Adobe XD', 'Illustrator', 'Photoshop', 'After Effects']
-const METHODS = ['Design Thinking', 'Agile / Scrum', 'Atomic Design', 'JTBD', 'Lean UX']
-const AI_LIST = [
-  { name: 'Claude', color: '#d97757' },
-  { name: 'Gemini', color: '#4285F4' },
-  { name: 'ChatGPT', color: '#10a37f' },
-  { name: 'v0', color: '#ffffff' },
-  { name: 'Bolt', color: '#7c3aed' },
-]
+import { SKILL_DOMAINS, TOOLS, METHODS, AI_TOOLS } from '@/lib/content'
 
 export default function ToolkitFrame() {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null)
@@ -145,7 +117,7 @@ export default function ToolkitFrame() {
         <span style={{ width: 1, height: 10, background: 'rgba(255,255,255,0.07)', display: 'inline-block', margin: '0 10px' }} />
 
         <span style={{ fontSize: 7, color: '#2a2520', letterSpacing: '0.14em', textTransform: 'uppercase', marginRight: 8, flexShrink: 0 }}>AI</span>
-        {AI_LIST.map(a => (
+        {AI_TOOLS.map(a => (
           <span key={a.name} style={{ fontSize: 8, color: '#484541', border: `1px solid ${a.color}20`, borderLeft: `1.5px solid ${a.color}50`, borderRadius: 2, padding: '1px 5px', marginRight: 4, background: `${a.color}08` }}>{a.name}</span>
         ))}
       </motion.div>

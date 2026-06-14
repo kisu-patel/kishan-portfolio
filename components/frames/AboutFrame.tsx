@@ -2,24 +2,23 @@
 
 import { useEffect, useRef } from 'react'
 import { motion, animate } from 'framer-motion'
+import { PROFILE, STATS, TOOLS, SPECS, CURRENT_ROLE, type Stat } from '@/lib/content'
 
 // Animated counter that counts up from 0 on mount
-function AnimatedStat({ val, unit, label }: { val: string; unit: string; label: string }) {
-  const num = parseInt(val, 10)
-  const suffix = val.replace(String(num), '')
+function AnimatedStat({ val, suffix, unit, label }: Stat) {
   const numRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     const node = numRef.current
     if (!node) return
-    const ctrl = animate(0, num, {
+    const ctrl = animate(0, val, {
       duration: 1.6,
       ease: [0.16, 1, 0.3, 1],
       delay: 0.5,
       onUpdate: (v) => { node.textContent = Math.round(v) + suffix },
     })
     return ctrl.stop
-  }, [num, suffix])
+  }, [val, suffix])
 
   return (
     <div style={{
@@ -36,7 +35,7 @@ function AnimatedStat({ val, unit, label }: { val: string; unit: string; label: 
             fontVariantNumeric: 'tabular-nums',
           }}
         >
-          {val}
+          {val}{suffix}
         </span>
         <span style={{ fontSize: 9, color: '#2e2c29', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
           {unit}
@@ -46,16 +45,6 @@ function AnimatedStat({ val, unit, label }: { val: string; unit: string; label: 
     </div>
   )
 }
-
-const STATS = [
-  { val: '3+', unit: 'yrs', label: 'At Motadata' },
-  { val: '20+', unit: 'mod', label: 'Modules shipped' },
-  { val: '5', unit: 'tools', label: 'Design tools' },
-]
-
-const TOOLS = ['Figma', 'Adobe XD', 'Illustrator', 'Photoshop', 'After Effects']
-
-const SPECS = ['Product Design', 'UX Research', 'Dashboard UI', 'Design Systems', 'Enterprise UX', 'Information Architecture']
 
 // Stagger variants
 const container = {
@@ -117,7 +106,7 @@ export default function AboutFrame() {
           {/* Animated stats */}
           <motion.div variants={item} style={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
             {STATS.map(s => (
-              <AnimatedStat key={s.label} val={s.val} unit={s.unit} label={s.label} />
+              <AnimatedStat key={s.label} {...s} />
             ))}
           </motion.div>
 
@@ -146,10 +135,10 @@ export default function AboutFrame() {
               fontFamily: 'var(--font-display)', textTransform: 'uppercase',
               letterSpacing: '0.05em', lineHeight: 1.05,
             }}>
-              KISHAN<br />S. PATEL
+              {PROFILE.firstName}<br />{PROFILE.lastName}
             </h3>
             <p style={{ fontSize: 11, color: '#c8a96e', letterSpacing: '0.16em', textTransform: 'uppercase', marginTop: 6 }}>
-              Product Designer
+              {PROFILE.role}
             </p>
           </motion.div>
 
@@ -179,15 +168,14 @@ export default function AboutFrame() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
               <div>
                 <p style={{ fontSize: 10, color: '#c8a96e', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  MOTADATA
+                  {CURRENT_ROLE.company}
                 </p>
-                <p style={{ fontSize: 13, color: '#e8e2d8', fontWeight: 600, marginTop: 2 }}>Product Designer</p>
+                <p style={{ fontSize: 13, color: '#e8e2d8', fontWeight: 600, marginTop: 2 }}>{CURRENT_ROLE.title}</p>
               </div>
-              <p style={{ fontSize: 10, color: '#3a3a3a', letterSpacing: '0.04em', marginTop: 2 }}>Jul 2022 — Present</p>
+              <p style={{ fontSize: 10, color: '#3a3a3a', letterSpacing: '0.04em', marginTop: 2 }}>{CURRENT_ROLE.period}</p>
             </div>
             <p style={{ fontSize: 11, color: '#5e5b55', lineHeight: 1.65 }}>
-              Sole UX designer for ObserveOps. Designed RUM Module end-to-end,
-              Metric Explorer, Dashboard system, Global Filter, Topology, and more.
+              {CURRENT_ROLE.blurb}
             </p>
           </motion.div>
 
